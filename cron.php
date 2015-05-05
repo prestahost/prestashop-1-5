@@ -21,7 +21,7 @@ $shopId = Configuration::get('ULOZENKA_ACCESS_CODE');
 $apiKey = Configuration::get('ULOZENKA_API_KEY');
 
 
-$sql = 'SELECT * FROM ' . _DB_PREFIX_ . 'ulozenka WHERE id_ulozenka > 0 AND doruceno =0';
+$sql = 'SELECT * FROM ' . _DB_PREFIX_ . 'ulozenka WHERE id_ulozenka > 0 AND (doruceno =0 OR doruceno is null)';
 $zasilky = Db::getInstance()->executeS($sql);
 
 $stavy = array('zásilka byla vydána');
